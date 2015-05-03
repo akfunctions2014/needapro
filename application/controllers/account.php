@@ -282,5 +282,43 @@ class Account extends MY_Controller
             ]);
         }
     }
+    
+    public function categories()
+    {
+        if($this->auth())
+        {
+            $this->load->view("account/categories", [
+                "categories" => $this->account_model->categories()
+            ]);
+        }
+        else
+        {
+            redirect("account/login");
+        }
+    }
+    
+    public function updatecategories()
+    {
+        if($this->auth())
+        {
+            if($this->input->post("session_id"))
+            {
+                $this->load->library("form_validation");
+                $this->form_validation->set_rules("session_id", "session_id", "required|callback_authSession");
+                if($this->form_validation->run())
+                {
+                   $this->account_model->updatecategories();
+                }
+                else
+                {
+                    redirect("account/categories");
+                }
+            }
+        }
+        else
+        {
+            redirect("account/login");
+        }
+    }
 
 }

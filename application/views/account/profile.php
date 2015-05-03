@@ -17,10 +17,11 @@
       <h4 class="media-heading"><?=$account->fullname?></h4>
       <?=$account->email?>
     </div>
-  </div>
+  </div>    
+  
 
     <?= anchor("account/editprofile", "Edit Profile", ["class"=> "list-group-item"]) ?>
-    <?= anchor("account/specialties", "My specialties", ["class"=> "list-group-item"]) ?>
+    <?= anchor("account/categories", "My specialties", ["class"=> "list-group-item"]) ?>
     <?= anchor("account/changepassword", "Change my password", ["class"=> "list-group-item"]) ?>
     <?= anchor("account/avatar", "Change my profile picture", ["class"=> "list-group-item"]) ?>
     <?= anchor("account/logout", "Logout", ["onclick"=>"return confirm('Do you want to logout?')","class"=> "list-group-item"]) ?>

@@ -17,3 +17,17 @@ and open the template in the editor.
 h1, h2{
     text-align:center;
 }
+
+.switch-checkbox {
+    overflow: hidden;
+}
+.switch-checkbox .toggle{
+    float:right;
+}
+
+.switch-checkbox h3{
+    padding:0px;
+    margin:0px;
+    float:left;
+    line-height: 34px;
+}

@@ -32,5 +32,13 @@ class MY_Model extends CI_Model
         $query = $this->db->get("account");
         return $query->result()[0];
     }
+    
+    public function getRow($table, $id)
+    {
+        $this->db->where("id", $id);
+        $this->db->limit(1);
+        $query = $this->db->get($table);
+        return $query->result()[0];
+    }
 }
 
